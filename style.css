@@ -1,0 +1,18 @@
+body{
+    display: flex;
+    justify-content: center;
+}
+
+.timer-container{
+    font-size: 25px;
+    color: black;
+    background-color: rgb(170, 170, 177);
+    margin: 200px;
+    height: 100%;
+    width: 400px;
+    padding: 100px;
+    text-align: center;
+    border-radius: 25px;
+    border: 10px solid grey;
+}
+
