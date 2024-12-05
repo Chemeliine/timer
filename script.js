@@ -3,8 +3,11 @@ seconds = 0
 
 function displayTimer(){
     var newTime = document.createElement("p");
-    newTime.innerHTML = seconds;
-    document.getElementById("timer").appendChild(newTime);
+    newTime.innerHTML = formatTime(seconds);
+    var parent = document.getElementById("timer");
+    var oldTime = parent.firstChild;
+
+    parent.replaceChild(newTime, oldTime);
     
 }
 
@@ -29,4 +32,15 @@ function Timer(){
     }
 
     countdown = setInterval(Timer, 1000);
+}
+
+
+function formatTime(seconds) {
+    var minutes = Math.floor(seconds / 60);
+    var remainingSeconds = seconds % 60;
+  
+    var formattedMinutes = String(minutes).padStart(2, '0');
+    var formattedSeconds = String(remainingSeconds).padStart(2, '0');
+  
+    return formattedMinutes + ':' + formattedSeconds;
 }
